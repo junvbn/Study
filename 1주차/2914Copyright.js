@@ -1,17 +1,15 @@
 const readline = require('readline');
-
 const rl = readline.createInterface({
 	input: process.stdin,
 	output: process.stdout,
 });
 
-// let information = [];
-// let inputData = [];
+let information = [];
+let inputData = [];
 rl.on('line', function (line) {
-	let array = line.split(' ');
-	let result = Number(array[0]) + Number(array[1]);
+	let process = line.split(' ');
+	let result = Number(process[0]) * (Number(process[1]) - 1) + 1;
 	console.log(result);
 }).on('close', function () {
-	//console.log('bye');
 	process.exit();
 });
