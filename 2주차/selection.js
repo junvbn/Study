@@ -1,17 +1,15 @@
 function solution(n) {
-	answer = [];
-
-	for (let i = 0; i < n.length; i++) {
-		let Min = 999;
-		for (let j = 0; j < n.length + i; j++) {
-			if (n[j] < Min) {
-				Min = n[j];
+	for (let i = 0; i < n.length - 1; i++) {
+		let idx = i;
+		for (let j = i; j < n.length; j++) {
+			if (n[j] < n[idx]) {
+				idx = j;
 			}
 		}
+		let jail = n[idx];
+		n[idx] = n[i];
+		n[i] = jail;
 	}
 }
 
-//입출력 예시
-
-//입력 : [1, 3, 5, 7, 4, 9, 6, 2, 8]
-//출력 : [1, 2, 3, 4, 5, 6, 7, 8, 9]
+solution([17, 25, 23, 25, 1, 1, 79, 59, 100]);
