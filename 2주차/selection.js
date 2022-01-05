@@ -10,6 +10,7 @@ function solution(n) {
 		n[idx] = n[i];
 		n[i] = jail;
 	}
+	console.log(n);
 }
 
 solution([17, 25, 23, 25, 1, 1, 79, 59, 100]);
